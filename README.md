@@ -1,6 +1,6 @@
-# pxt-b-board
+# pxt-unbdev-board
 
-MakeCode extension for b.Board blocks, TypeScript APIs, examples, tests, and simulator integration.
+MakeCode extension for UNBdev.board blocks, TypeScript APIs, examples, tests, and simulator integration.
 
 ## Status
 
