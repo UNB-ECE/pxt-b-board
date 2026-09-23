@@ -8,13 +8,13 @@ let emptyFrame = UNBdevBoard.buildFrame(
     4
 )
 
-control.assert(emptyFrame.length == 6, 100)
-control.assert(emptyFrame.getUint8(0) == 4, 101)
-control.assert(emptyFrame.getUint8(1) == 1, 102)
-control.assert(emptyFrame.getUint8(2) == UNBdevBoard.Module.I2C, 103)
-control.assert(emptyFrame.getUint8(3) == 4, 104)
-control.assert(emptyFrame.getUint8(4) == 0, 105)
-control.assert(emptyFrame.getUint8(5) == 4, 106)
+control.assert(emptyFrame.length == 6, "empty frame length")
+control.assert(emptyFrame.getUint8(0) == 4, "write command")
+control.assert(emptyFrame.getUint8(1) == 1, "Click A route")
+control.assert(emptyFrame.getUint8(2) == UNBdevBoard.Module.I2C, "I2C module")
+control.assert(emptyFrame.getUint8(3) == 4, "function ID")
+control.assert(emptyFrame.getUint8(4) == 0, "pin low byte")
+control.assert(emptyFrame.getUint8(5) == 4, "pin high byte")
 
 let payload = pins.createBufferFromArray([0xaa, 0x55])
 let dataFrame = UNBdevBoard.buildFrame(
@@ -26,13 +26,13 @@ let dataFrame = UNBdevBoard.buildFrame(
     payload
 )
 
-control.assert(dataFrame.length == 8, 110)
-control.assert(dataFrame.getUint8(1) == 2, 111)
-control.assert(dataFrame.getUint8(4) == 4, 112)
-control.assert(dataFrame.getUint8(6) == 0xaa, 113)
-control.assert(dataFrame.getUint8(7) == 0x55, 114)
+control.assert(dataFrame.length == 8, "data frame length")
+control.assert(dataFrame.getUint8(1) == 2, "Click B route")
+control.assert(dataFrame.getUint8(4) == 4, "chip-select pin")
+control.assert(dataFrame.getUint8(6) == 0xaa, "payload byte 0")
+control.assert(dataFrame.getUint8(7) == 0x55, "payload byte 1")
 
 UNBdevBoard.setControllerAddress(0x2a)
-control.assert(UNBdevBoard.getControllerAddress() == 0x2a, 120)
+control.assert(UNBdevBoard.getControllerAddress() == 0x2a, "valid address")
 UNBdevBoard.setControllerAddress(0x01)
-control.assert(UNBdevBoard.getControllerAddress() == 0x2a, 121)
+control.assert(UNBdevBoard.getControllerAddress() == 0x2a, "invalid address ignored")
