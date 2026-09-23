@@ -1,6 +1,6 @@
-# pxt-u-board
+# pxt-b-board
 
-MakeCode extension for u.Board blocks, TypeScript APIs, examples, tests, and simulator integration.
+MakeCode extension for b.Board blocks, TypeScript APIs, examples, tests, and simulator integration.
 
 ## Status
 
