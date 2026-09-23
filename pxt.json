@@ -1,0 +1,19 @@
+{
+    "name": "unbdev-board",
+    "version": "0.1.0",
+    "description": "MakeCode extension for the integrated UNBdev.board",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "control.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ]
+}
