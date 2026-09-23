@@ -7,6 +7,6 @@
         "test": "pxt test"
     },
     "devDependencies": {
-        "pxt": "13.2.4"
+        "pxt": "0.5.1"
     }
 }
