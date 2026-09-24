@@ -9,7 +9,8 @@
     "files": [
         "control.ts",
         "blixel.ts",
-        "microphone.ts"
+        "microphone.ts",
+        "motor.ts"
     ],
     "testFiles": [
         "test.ts"

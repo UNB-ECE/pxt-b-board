@@ -71,3 +71,9 @@ Intentional UNBdev.board differences are:
   are present; and
 - public documentation explicitly separates compile validation from pending
   physical microphone verification.
+
+The motor behavior in `motor.ts` was adapted from the browser-deployed
+`core/bBoardMotor.ts`, inspected on 24 September 2026. The UNBdev.board version
+retains its numeric controller protocol but changes public names, constrains
+inputs, adds explicit stop and direction APIs, and makes timed calls wait until
+the requested motion has stopped.
