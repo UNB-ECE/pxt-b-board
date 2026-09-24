@@ -1,0 +1,43 @@
+name: Extension CI
+
+on:
+  pull_request:
+    paths:
+      - "**.ts"
+      - "pxt.json"
+      - "package.json"
+      - ".github/workflows/ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "**.ts"
+      - "pxt.json"
+      - "package.json"
+      - ".github/workflows/ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install PXT CLI
+        run: npm install
+
+      - name: Select micro:bit target
+        run: npx pxt target microbit
+
+      - name: Install extension dependencies
+        run: npx pxt install
+
+      - name: Build extension and compile tests
+        run: npx pxt test
