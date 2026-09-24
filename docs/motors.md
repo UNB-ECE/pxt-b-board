@@ -1,7 +1,7 @@
 # UNBdev.board motors
 
-The `UNBdev.board motors` category controls the two motor-driver outputs on the
-integrated board. Use an approved external motor supply and the polarity and
+The **UNBdev.board → Motors** sub-entry controls the two motor-driver outputs on
+the integrated board. Use an approved external motor supply and the polarity and
 voltage range documented for the physical UNBdev.board; USB power alone is not
 an approved motor-power source.
 

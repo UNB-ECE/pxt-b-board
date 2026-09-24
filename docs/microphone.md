@@ -1,7 +1,7 @@
 # UNBdev.board microphone
 
 UNBdev.board includes a microphone on its integrated baseboard. Import this
-extension and open **Advanced > UNBdev.board microphone** to use its blocks.
+extension and open **UNBdev.board → Microphone** to use its blocks.
 
 ## Read the sound level
 
