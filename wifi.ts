@@ -175,7 +175,7 @@ namespace UNBdevBoardWiFi {
     /** Connect using credentials supplied by this MakeCode project. */
     //% blockId=unb_wifi_connect
     //% block="UNBdev.board connect to Wi-Fi $ssid with password $password"
-    //% group="Wi-Fi" weight=100
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=100
     export function connectWiFi(ssid: string, password: string): boolean {
         if (!valid(ssid) || !valid(password) || ssid.indexOf("\"") >= 0 ||
             password.indexOf("\"") >= 0 || ssid.indexOf("\\") >= 0 ||
@@ -194,7 +194,7 @@ namespace UNBdevBoardWiFi {
 
     //% blockId=unb_wifi_is_connected
     //% block="UNBdev.board Wi-Fi is connected"
-    //% group="Wi-Fi" weight=90
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=90
     export function isConnected(): boolean {
         if (!command("AT+CIPSTATUS", "OK", TIMEOUT)) return false
         const marker = response.indexOf("STATUS:")
@@ -206,7 +206,7 @@ namespace UNBdevBoardWiFi {
 
     //% blockId=unb_wifi_disconnect
     //% block="UNBdev.board disconnect Wi-Fi"
-    //% group="Wi-Fi" weight=80
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=80
     export function disconnect(): boolean {
         connected = false
         return command("AT+CWQAP", "OK", TIMEOUT)
@@ -214,7 +214,7 @@ namespace UNBdevBoardWiFi {
 
     //% blockId=unb_wifi_restart
     //% block="UNBdev.board restart Wi-Fi"
-    //% group="Wi-Fi" weight=70
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=70
     export function restart(): boolean {
         connected = false
         const result = command("AT+RST", "ready", 10000)
@@ -225,7 +225,7 @@ namespace UNBdevBoardWiFi {
     /** Query the ESP32 AT firmware identification text (`AT+GMR`). */
     //% blockId=unb_wifi_firmware_version
     //% block="UNBdev.board Wi-Fi firmware version"
-    //% group="Status" weight=60
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=60
     export function firmwareVersion(): string {
         if (!command("AT+GMR", "OK", 3000)) return ""
         let value = response
@@ -241,7 +241,7 @@ namespace UNBdevBoardWiFi {
     /** MQTT 3.1.1 anonymous clean session over TCP port 1883. */
     //% blockId=unb_mqtt_connect
     //% block="UNBdev.board MQTT connect to server $server"
-    //% group="MQTT" weight=100
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=55
     export function connectMQTT(server: string): boolean {
         if (!valid(server) || server.indexOf("\"") >= 0) return fail(ErrorCode.InvalidArgument)
         if (!isConnected()) return false
@@ -261,7 +261,7 @@ namespace UNBdevBoardWiFi {
 
     //% blockId=unb_mqtt_publish
     //% block="UNBdev.board MQTT publish $data to topic $topic"
-    //% group="MQTT" weight=90
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=50
     export function publish(topic: string, data: any): boolean {
         if (!connected) return fail(ErrorCode.NotConnected)
         let value = ""
@@ -282,7 +282,7 @@ namespace UNBdevBoardWiFi {
     //% blockId=unb_mqtt_on_message
     //% block="on UNBdev.board MQTT $type received $value from topic $topic"
     //% draggableParameters=variable blockAllowMultiple=1 afterOnStart=true
-    //% group="MQTT" weight=80
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=45
     export function onMessage(topic: string, type: DataType,
         handler: (value: any) => void): void {
         if (!valid(topic) || !handler) { error = ErrorCode.InvalidArgument; return }
@@ -347,6 +347,6 @@ namespace UNBdevBoardWiFi {
 
     //% blockId=unb_wifi_last_error
     //% block="UNBdev.board Wi-Fi last error"
-    //% group="Status" weight=50
+    //% blockNamespace=UNBDev group="Wi-Fi" weight=40
     export function lastError(): ErrorCode { return error }
 }
