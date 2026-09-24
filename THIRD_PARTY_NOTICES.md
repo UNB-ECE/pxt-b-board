@@ -77,3 +77,9 @@ The motor behavior in `motor.ts` was adapted from the browser-deployed
 retains its numeric controller protocol but changes public names, constrains
 inputs, adds explicit stop and direction APIs, and makes timed calls wait until
 the requested motion has stopped.
+
+The Wi-Fi/MQTT migration also used the browser-deployed
+`core/bBoardWiFi.ts`, inspected on 24 September 2026. Its ESP-AT command flow,
+MQTT 3.1.1 packet layout, and UART event routing form the behavioral baseline;
+the UNB implementation intentionally changes failure and credential-handling
+behavior as documented in `docs/wifi-mqtt.md`.

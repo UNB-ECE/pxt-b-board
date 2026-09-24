@@ -4,6 +4,10 @@ Independently importable Microsoft MakeCode extension for the integrated
 UNBdev.board: a micro:bit soldered to a b.Board-derived baseboard with separate
 UNBdev.board controller firmware.
 
+The integrated UNBdev.board uses micro:bit V2. The combined extension disables
+the legacy `mbdal` (micro:bit V1) build variant so its complete peripheral API
+fits and compiles against the board actually supplied for this project.
+
 ## Current status
 
 The repository contains the control and transport foundation from
@@ -48,6 +52,9 @@ See [the microphone guide](docs/microphone.md) for usage and protocol details.
 
 See [the protocol baseline](docs/protocol.md) and
 [motor guide](docs/motors.md), and [third-party notices](THIRD_PARTY_NOTICES.md).
+
+Wi-Fi/MQTT scope, credential safety, limitations, and its remaining firmware
+and hardware acceptance gate are in [the Wi-Fi guide](docs/wifi-mqtt.md).
 
 ## Planned migration order
 
