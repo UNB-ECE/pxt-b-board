@@ -6,15 +6,15 @@ UNBdev.board controller firmware.
 
 ## Current status
 
-The repository contains the first control and transport foundation for
-`UNB-ECE/unb-platform#40`. It preserves the supervisor-approved b.Board BLiX
-wire format as a compatibility baseline while using UNBdev.board names and
-isolating the low-level APIs from the student toolbox.
+The repository contains the control and transport foundation from
+`UNB-ECE/unb-platform#40` and the student-facing integrated microphone API from
+`UNB-ECE/unb-platform#42`. It preserves the supervisor-approved b.Board BLiX
+wire format as a compatibility baseline while using UNBdev.board names.
 
-The controller firmware and hardware repositories do not yet contain the
-specification or assets needed for physical validation. Until those are added,
-the protocol is **not hardware-verified** and must not be described as a stable
-UNBdev.board firmware contract.
+Controller communication and firmware version `2.17` have been verified on a
+physical UNBdev.board. Microphone levels, thresholds, and events still require
+the physical verification procedure in
+[the microphone guide](docs/microphone.md) before issue #42 is complete.
 
 See [the protocol baseline](docs/protocol.md) and
 [third-party notices](THIRD_PARTY_NOTICES.md).

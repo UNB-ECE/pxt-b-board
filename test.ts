@@ -36,3 +36,18 @@ UNBdevBoard.setControllerAddress(0x2a)
 control.assert(UNBdevBoard.getControllerAddress() == 0x2a, "valid address")
 UNBdevBoard.setControllerAddress(0x01)
 control.assert(UNBdevBoard.getControllerAddress() == 0x2a, "invalid address ignored")
+
+// Representative public microphone programs are kept unreachable so the
+// package test compiles their APIs without issuing hardware I/O in CI.
+if (false) {
+    UNBdevBoardMic.setEnabled(UNBdevBoardMic.State.Enabled)
+    UNBdevBoardMic.updateBaseline()
+    UNBdevBoardMic.setThreshold(50)
+    let level = UNBdevBoardMic.soundLevel()
+    let reached = UNBdevBoardMic.thresholdReached()
+    UNBdevBoardMic.clearThresholdFlag()
+    UNBdevBoardMic.onLoudSound(function () {
+        basic.showNumber(level)
+        basic.showIcon(reached ? IconNames.Yes : IconNames.No)
+    })
+}
