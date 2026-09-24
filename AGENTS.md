@@ -15,3 +15,8 @@ All repository changes follow `https://github.com/orgs/UNB-ECE/projects/1`.
   merging, and closure unless an exact action is explicitly delegated.
 - Record physical UNBdev.board test setup, firmware, revision, expected result,
   and actual result when hardware behavior is part of acceptance.
+- Test hardware against a combined revision imported through the normal
+  repository URL when separate feature revisions would require manual MakeCode
+  dependency pins. A maintainer may formally defer feature-level physical
+  criteria to a linked integration-validation issue; keep the feature and its
+  documentation explicit that hardware remains unverified.
