@@ -1,5 +1,8 @@
 # UNBdev.board Wi-Fi and MQTT scope
 
+This feature is part of the combined micro:bit V2-only UNBdev.board extension;
+micro:bit V1 is not a supported hardware variant.
+
 ## Acceptance gate
 
 This module is not ready for final acceptance until the installed ESP32

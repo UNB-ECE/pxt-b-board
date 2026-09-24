@@ -19,5 +19,8 @@
     "public": true,
     "supportedTargets": [
         "microbit"
+    ],
+    "disablesVariants": [
+        "mbdal"
     ]
 }
