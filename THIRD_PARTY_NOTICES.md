@@ -43,3 +43,9 @@ That repository distributes PXT source under this licence:
 The browser-deployed source appears newer than the public `Alfa` branch. This
 project records the two sources separately and does not imply that Brilliant
 Labs endorses UNBdev.board.
+
+The Wi-Fi/MQTT migration also used the browser-deployed
+`core/bBoardWiFi.ts`, inspected on 24 September 2026. Its ESP-AT command flow,
+MQTT 3.1.1 packet layout, and UART event routing form the behavioral baseline;
+the UNB implementation intentionally changes failure and credential-handling
+behavior as documented in `docs/wifi-mqtt.md`.
