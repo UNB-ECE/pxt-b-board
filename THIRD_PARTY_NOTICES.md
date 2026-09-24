@@ -50,3 +50,24 @@ deployed BLiXel command identifiers and colour conversion behavior. The shift,
 rotate, zero-width bar-graph handling, UNBdev.board terminology, and tests are
 UNB-ECE additions; the deployed source contains only commented placeholders
 for shift and rotate.
+
+The microphone behavior was adapted from the deployed editor's
+`core/bBoardMic.ts`, inspected on 24 September 2026. The mapping retained from
+that file is microphone module `7`, built-in route `0`, analog pin mask
+`0x0001`, function IDs `1` through `7`, threshold event mask `8`, threshold
+payload little-endian encoding, and flag clearing around event callbacks.
+
+Intentional UNBdev.board differences are:
+
+- namespace, enum, API, category, block, and documentation names use
+  UNBdev.board terminology;
+- the unused and undocumented legacy sound-level function `1` is not public;
+- the deployed source's one-value `soundLevel` enum is removed because the
+  event represents only a loud-sound threshold;
+- implementation calls the shared `UNBdevBoard` transport and event layer;
+- threshold inputs are rounded and constrained to `1` through `65535` before
+  little-endian encoding, including calls made directly from TypeScript;
+- block IDs use an `unbdev_` prefix to avoid collisions when both extensions
+  are present; and
+- public documentation explicitly separates compile validation from pending
+  physical microphone verification.

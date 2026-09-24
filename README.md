@@ -7,7 +7,8 @@ UNBdev.board controller firmware.
 ## Current status
 
 The repository contains the control and transport foundation from
-`UNB-ECE/unb-platform#40` and the public BLiXel blocks from issue `#41`. It
+`UNB-ECE/unb-platform#40`, the public BLiXel blocks from issue `#41`, and the
+integrated microphone API from issue `#42`. It
 preserves the supervisor-approved b.Board BLiX wire format as a compatibility
 baseline while using UNBdev.board names and isolating low-level APIs from the
 student toolbox.
@@ -35,6 +36,15 @@ UNBdevBLiXel.setAll(UNBdevBLiXel.rgb(0, 0, 255))
 UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Three, 0xff00ff)
 UNBdevBLiXel.rotate(1)
 ```
+
+## Microphone blocks
+
+The student-facing microphone API covers RMS sound level, baseline updates,
+threshold configuration and loud-sound events. Its physical behavior remains
+unverified and is deferred to the combined integration gate in
+`UNB-ECE/unb-platform#48`.
+
+See [the microphone guide](docs/microphone.md) for usage and protocol details.
 
 See [the protocol baseline](docs/protocol.md) and
 [third-party notices](THIRD_PARTY_NOTICES.md).
