@@ -6,15 +6,35 @@ UNBdev.board controller firmware.
 
 ## Current status
 
-The repository contains the first control and transport foundation for
-`UNB-ECE/unb-platform#40`. It preserves the supervisor-approved b.Board BLiX
-wire format as a compatibility baseline while using UNBdev.board names and
-isolating the low-level APIs from the student toolbox.
+The repository contains the control and transport foundation from
+`UNB-ECE/unb-platform#40` and the public BLiXel blocks from issue `#41`. It
+preserves the supervisor-approved b.Board BLiX wire format as a compatibility
+baseline while using UNBdev.board names and isolating low-level APIs from the
+student toolbox.
 
-The controller firmware and hardware repositories do not yet contain the
-specification or assets needed for physical validation. Until those are added,
-the protocol is **not hardware-verified** and must not be described as a stable
-UNBdev.board firmware contract.
+Controller request/response transport has been physically verified against
+UNBdev.board controller firmware 2.17. BLiXel-specific commands added by issue
+`#41` still require physical verification and must not yet be described as a
+stable UNBdev.board firmware contract.
+
+## BLiXel blocks
+
+Import the extension, then open **Advanced → UNBdev.board BLiXel**. The public
+blocks set all five integrated RGB BLiXels, set individual pixels, clear the
+strip, adjust brightness, shift or rotate colours, show a five-step bar graph,
+and construct RGB or HSL colours. Operations update the physical display
+immediately; a separate `show` block is not required.
+
+Bar graphs clamp values to the selected range and light zero or five BLiXels
+for values below or above the range. When minimum and maximum are equal, the
+graph lights all five BLiXels only when the value is at least that boundary.
+
+```typescript
+UNBdevBLiXel.setBrightness(50)
+UNBdevBLiXel.setAll(UNBdevBLiXel.rgb(0, 0, 255))
+UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Three, 0xff00ff)
+UNBdevBLiXel.rotate(1)
+```
 
 See [the protocol baseline](docs/protocol.md) and
 [third-party notices](THIRD_PARTY_NOTICES.md).
@@ -22,7 +42,7 @@ See [the protocol baseline](docs/protocol.md) and
 ## Planned migration order
 
 1. Control and protocol foundation
-2. BLiXel blocks
+2. BLiXel blocks (implemented; awaiting physical BLiXel verification)
 3. Microphone blocks
 4. Motor blocks
 5. Wi-Fi blocks

@@ -36,3 +36,28 @@ UNBdevBoard.setControllerAddress(0x2a)
 control.assert(UNBdevBoard.getControllerAddress() == 0x2a, "valid address")
 UNBdevBoard.setControllerAddress(0x01)
 control.assert(UNBdevBoard.getControllerAddress() == 0x2a, "invalid address ignored")
+
+// BLiXel colour helpers and approved bar-graph edge behavior.
+let colour = UNBdevBLiXel.rgb(0x12, 0x34, 0x56)
+control.assert(colour == 0x123456, "BLiXel RGB packing")
+control.assert(UNBdevBLiXel.red(colour) == 0x12, "BLiXel red channel")
+control.assert(UNBdevBLiXel.green(colour) == 0x34, "BLiXel green channel")
+control.assert(UNBdevBLiXel.blue(colour) == 0x56, "BLiXel blue channel")
+control.assert(UNBdevBLiXel.hsl(0, 99, 50) == 0xfe0101, "BLiXel HSL red")
+
+control.assert(UNBdevBLiXel.barGraphCount(-1, 100, 0) == 0, "graph clamps low")
+control.assert(UNBdevBLiXel.barGraphCount(50, 100, 0) == 3, "graph rounds midpoint")
+control.assert(UNBdevBLiXel.barGraphCount(101, 100, 0) == 5, "graph clamps high")
+control.assert(UNBdevBLiXel.barGraphCount(5, 5, 5) == 5, "graph zero range high")
+control.assert(UNBdevBLiXel.barGraphCount(4, 5, 5) == 0, "graph zero range low")
+
+// Compile every public display operation without performing hardware I/O.
+if (false) {
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
+    UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Three, 0xff00ff)
+    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setBrightness(50)
+    UNBdevBLiXel.shift(1)
+    UNBdevBLiXel.rotate(-1)
+    UNBdevBLiXel.showBarGraph(50, 100, 0)
+}

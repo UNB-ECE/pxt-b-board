@@ -43,3 +43,10 @@ That repository distributes PXT source under this licence:
 The browser-deployed source appears newer than the public `Alfa` branch. This
 project records the two sources separately and does not imply that Brilliant
 Labs endorses UNBdev.board.
+
+The UNBdev.board BLiXel implementation was adapted from the browser-deployed
+`core/bBoardBlixel.ts`, inspected on 24 September 2026. It preserves the
+deployed BLiXel command identifiers and colour conversion behavior. The shift,
+rotate, zero-width bar-graph handling, UNBdev.board terminology, and tests are
+UNB-ECE additions; the deployed source contains only commented placeholders
+for shift and rotate.
