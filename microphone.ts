@@ -54,7 +54,7 @@ namespace UNBdevBoardMic {
     /** Enable or disable the microphone built into UNBdev.board. */
     //% blockId=unbdev_mic_enable
     //% block="UNBdev.board microphone $state"
-    //% blockNamespace=UNBDev group="Microphone"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=60 advanced=true
     export function setEnabled(state: State): void {
         setThreshold(currentThreshold)
@@ -65,7 +65,7 @@ namespace UNBdevBoardMic {
     /** Recalculate the microphone's ambient-sound baseline. */
     //% blockId=unbdev_mic_baseline
     //% block="update UNBdev.board microphone baseline"
-    //% blockNamespace=UNBDev group="Microphone"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=50 advanced=true
     export function updateBaseline(): void {
         command(MicrophoneFunction.SetBaseline)
@@ -74,7 +74,7 @@ namespace UNBdevBoardMic {
     /** Read the RMS sound level measured by the integrated microphone. */
     //% blockId=unbdev_mic_sound_level
     //% block="UNBdev.board sound level"
-    //% blockNamespace=UNBDev group="Microphone"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=100
     export function soundLevel(): number {
         initialize()
@@ -85,7 +85,7 @@ namespace UNBdevBoardMic {
     //% blockId=unbdev_mic_set_threshold
     //% block="set UNBdev.board sound threshold to $threshold"
     //% threshold.defl=50 threshold.min=1 threshold.max=65535
-    //% blockNamespace=UNBDev group="Microphone"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=80 advanced=true
     export function setThreshold(threshold: number): void {
         threshold = Math.round(Math.constrain(threshold, 1, 65535))
@@ -97,7 +97,7 @@ namespace UNBdevBoardMic {
     /** Return true when the firmware's microphone threshold flag is set. */
     //% blockId=unbdev_mic_threshold_flag
     //% block="has UNBdev.board sound threshold been reached?"
-    //% blockNamespace=UNBDev group="Microphone"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=40 advanced=true
     export function thresholdReached(): boolean {
         return read(MicrophoneFunction.ThresholdFlag) == 1
@@ -106,7 +106,7 @@ namespace UNBdevBoardMic {
     /** Clear the firmware's microphone threshold flag. */
     //% blockId=unbdev_mic_clear_threshold_flag
     //% block="clear UNBdev.board sound threshold flag"
-    //% blockNamespace=UNBDev group="Microphone"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=30 advanced=true
     export function clearThresholdFlag(): void {
         command(MicrophoneFunction.ClearThresholdFlag)
@@ -116,7 +116,7 @@ namespace UNBdevBoardMic {
     //% blockId=unbdev_mic_on_loud_sound
     //% block="on UNBdev.board loud sound"
     //% blockAllowMultiple=0 afterOnStart=true
-    //% blockNamespace=UNBDev group="Microphone"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=90
     export function onLoudSound(handler: () => void): void {
         initialize()
