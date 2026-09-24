@@ -49,6 +49,9 @@ See [the microphone guide](docs/microphone.md) for usage and protocol details.
 See [the protocol baseline](docs/protocol.md) and
 [motor guide](docs/motors.md), and [third-party notices](THIRD_PARTY_NOTICES.md).
 
+Wi-Fi/MQTT scope, credential safety, limitations, and its remaining firmware
+and hardware acceptance gate are in [the Wi-Fi guide](docs/wifi-mqtt.md).
+
 ## Planned migration order
 
 1. Control and protocol foundation

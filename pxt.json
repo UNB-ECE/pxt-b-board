@@ -10,7 +10,8 @@
         "control.ts",
         "blixel.ts",
         "microphone.ts",
-        "motor.ts"
+        "motor.ts",
+        "wifi.ts"
     ],
     "testFiles": [
         "test.ts"
