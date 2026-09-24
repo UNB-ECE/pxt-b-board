@@ -8,7 +8,7 @@ UNBdev.board controller firmware.
 
 The repository contains the control and transport foundation from
 `UNB-ECE/unb-platform#40`, the public BLiXel blocks from issue `#41`, and the
-integrated microphone API from issue `#42`. It
+integrated microphone API from issue `#42`, and motor APIs from issue `#43`. It
 preserves the supervisor-approved b.Board BLiX wire format as a compatibility
 baseline while using UNBdev.board names and isolating low-level APIs from the
 student toolbox.
@@ -47,7 +47,7 @@ unverified and is deferred to the combined integration gate in
 See [the microphone guide](docs/microphone.md) for usage and protocol details.
 
 See [the protocol baseline](docs/protocol.md) and
-[third-party notices](THIRD_PARTY_NOTICES.md).
+[motor guide](docs/motors.md), and [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Planned migration order
 
