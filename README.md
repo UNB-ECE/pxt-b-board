@@ -8,6 +8,10 @@ The integrated UNBdev.board uses micro:bit V2. The combined extension disables
 the legacy `mbdal` (micro:bit V1) build variant so its complete peripheral API
 fits and compiles against the board actually supplied for this project.
 
+All student-facing blocks appear in one **UNBDev** toolbox category, organized
+into Motors, Wi-Fi, Microphone, and BLiXel groups. Existing TypeScript namespace
+names remain available so saved JavaScript projects stay compatible.
+
 ## Current status
 
 The repository contains the control and transport foundation from
@@ -24,7 +28,7 @@ stable UNBdev.board firmware contract.
 
 ## BLiXel blocks
 
-Import the extension, then open **Advanced → UNBdev.board BLiXel**. The public
+Import the extension, then open **UNBDev → BLiXel**. The public
 blocks set all five integrated RGB BLiXels, set individual pixels, clear the
 strip, adjust brightness, shift or rotate colours, show a five-step bar graph,
 and construct RGB or HSL colours. Operations update the physical display
