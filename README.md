@@ -6,10 +6,10 @@ UNBdev.board controller firmware.
 
 ## Current status
 
-The repository contains the first control and transport foundation for
-`UNB-ECE/unb-platform#40`. It preserves the supervisor-approved b.Board BLiX
-wire format as a compatibility baseline while using UNBdev.board names and
-isolating the low-level APIs from the student toolbox.
+The repository contains the shared control and transport foundation and the
+first migrated peripheral modules. It preserves the supervisor-approved
+b.Board BLiX wire format as a compatibility baseline while using UNBdev.board
+names and isolating low-level APIs from the student toolbox.
 
 The controller firmware and hardware repositories do not yet contain the
 specification or assets needed for physical validation. Until those are added,
@@ -17,7 +17,7 @@ the protocol is **not hardware-verified** and must not be described as a stable
 UNBdev.board firmware contract.
 
 See [the protocol baseline](docs/protocol.md) and
-[third-party notices](THIRD_PARTY_NOTICES.md).
+[motor guide](docs/motors.md), and [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Planned migration order
 
