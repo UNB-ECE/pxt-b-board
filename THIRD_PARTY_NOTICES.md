@@ -65,6 +65,8 @@ Intentional UNBdev.board differences are:
 - the deployed source's one-value `soundLevel` enum is removed because the
   event represents only a loud-sound threshold;
 - implementation calls the shared `UNBdevBoard` transport and event layer;
+- threshold inputs are rounded and constrained to `1` through `65535` before
+  little-endian encoding, including calls made directly from TypeScript;
 - block IDs use an `unbdev_` prefix to avoid collisions when both extensions
   are present; and
 - public documentation explicitly separates compile validation from pending

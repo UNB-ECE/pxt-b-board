@@ -16,8 +16,9 @@ basic.forever(function () {
 
 ## Detect a loud sound
 
-Set the threshold before registering the event. A non-positive threshold is
-replaced by the firmware-compatible default of `50`.
+Set the threshold before registering the event. The extension rounds
+TypeScript inputs and constrains them to the firmware's unsigned 16-bit range
+of `1` through `65535`; the default is `50`.
 
 ```typescript
 UNBdevBoardMic.setThreshold(75)

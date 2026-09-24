@@ -84,7 +84,7 @@ namespace UNBdevBoardMic {
     //% threshold.defl=50 threshold.min=1 threshold.max=65535
     //% weight=80 advanced=true
     export function setThreshold(threshold: number): void {
-        if (threshold <= 0) threshold = DEFAULT_THRESHOLD
+        threshold = Math.round(Math.constrain(threshold, 1, 65535))
         currentThreshold = threshold
         command(MicrophoneFunction.SetThreshold,
             [threshold & 0xff, (threshold >> 8) & 0xff])
