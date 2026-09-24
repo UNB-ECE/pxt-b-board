@@ -8,7 +8,8 @@
     },
     "files": [
         "control.ts",
-        "blixel.ts"
+        "blixel.ts",
+        "microphone.ts"
     ],
     "testFiles": [
         "test.ts"

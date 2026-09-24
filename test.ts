@@ -61,3 +61,18 @@ if (false) {
     UNBdevBLiXel.rotate(-1)
     UNBdevBLiXel.showBarGraph(50, 100, 0)
 }
+
+// Representative public microphone programs are kept unreachable so the
+// package test compiles their APIs without issuing hardware I/O in CI.
+if (false) {
+    UNBdevBoardMic.setEnabled(UNBdevBoardMic.State.Enabled)
+    UNBdevBoardMic.updateBaseline()
+    UNBdevBoardMic.setThreshold(50)
+    let level = UNBdevBoardMic.soundLevel()
+    let reached = UNBdevBoardMic.thresholdReached()
+    UNBdevBoardMic.clearThresholdFlag()
+    UNBdevBoardMic.onLoudSound(function () {
+        basic.showNumber(level)
+        basic.showIcon(reached ? IconNames.Yes : IconNames.No)
+    })
+}
