@@ -18,7 +18,9 @@ base-board peripherals and the two mikroBUS-compatible Click sockets.
 
 ## Controller transport
 
-The compatibility baseline uses 7-bit I2C address `0x28`. A routed operation is
+The compatibility baseline uses 7-bit I2C address `0x28`. Physical verification
+on 24 September 2026 confirmed a successful firmware-version transaction with
+controller firmware `2.17`. A routed operation is
 written as this byte sequence:
 
 | Offset | Field | Meaning |
@@ -63,8 +65,11 @@ micro:bit reads it. Command `6` selects the four-byte event-port mask.
   the student-facing blocks.
 - A firmware compatibility check and explicit protocol version should replace
   implicit compatibility once the firmware contract is available.
-- Hardware validation must cover control, events, GPIO, PWM, UART, I2C routing,
-  and SPI routing before issue #40 is closed.
+- Issue #40 physically validates the shared controller transport through the
+  firmware-version request/response operation. Peripheral-specific behavior—
+  including events, GPIO, PWM, UART, I2C routing, and SPI routing—is validated
+  by the corresponding feature-migration issues when their public blocks are
+  implemented.
 
 ## Source provenance
 
