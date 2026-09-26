@@ -17,7 +17,7 @@
  * not to the micro:bit, so a package that drives the pins itself would both
  * fail and collide with the controller protocol on the shared I2C bus.
  */
-//% color=#9E4894 icon="" block="UNBdev.board Click"
+//% color=#9E4894 icon="" block="UNBdev.board Click"
 //% weight=300
 namespace UNBdevClick {
     /** Click socket on the UNBdev.board. */
