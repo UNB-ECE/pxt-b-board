@@ -4,7 +4,7 @@
  * The controller commands intentionally retain the Brilliant Labs b.Board
  * motor wire format so they work with the UNBdev.board controller firmware.
  */
-//% weight=98 color=#9E4894 icon="\uf013" block="UNBdev.board motors"
+//% weight=98 color=#9E4894 icon="\uf085" block="UNBdev.board motors"
 namespace UNBdevMotor {
     enum MotorFunction {
         Enable = 1,
