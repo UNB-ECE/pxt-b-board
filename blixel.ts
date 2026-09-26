@@ -42,7 +42,6 @@ enum UNBdevBLiXelIndex {
  * Control the five RGB BLiXels integrated into UNBdev.board.
  */
 //% weight=400 color=#9E4894 icon="\uf110" block="UNBdev.board BLiXel"
-//% advanced=true
 namespace UNBdevBLiXel {
     const PIXEL_COUNT = 5
     const BYTES_PER_PIXEL = 3
@@ -90,6 +89,7 @@ namespace UNBdevBLiXel {
     //% blockId=UNBdevBLiXel_set_all
     //% block="set all UNBdev.board BLiXels to $colour"
     //% colour.shadow="colorNumberPicker"
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=100 blockGap=8
     export function setAll(colour: number): void {
         colour &= 0xffffff
@@ -107,6 +107,7 @@ namespace UNBdevBLiXel {
     //% blockId=UNBdevBLiXel_set_pixel
     //% block="set UNBdev.board BLiXel $index to $colour"
     //% colour.shadow="colorNumberPicker"
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=90 blockGap=8
     export function setPixel(index: UNBdevBLiXelIndex, colour: number): void {
         const pixel = Math.clamp(0, PIXEL_COUNT - 1, index)
@@ -124,6 +125,7 @@ namespace UNBdevBLiXel {
     /** Turn off all five integrated BLiXels. */
     //% blockId=UNBdevBLiXel_clear
     //% block="clear all UNBdev.board BLiXels"
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=80 blockGap=8
     export function clear(): void {
         pixels.fill(0)
@@ -137,6 +139,7 @@ namespace UNBdevBLiXel {
     //% blockId=UNBdevBLiXel_set_brightness
     //% block="set UNBdev.board BLiXel brightness to $percent %"
     //% percent.min=0 percent.max=100 percent.defl=50
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=70 blockGap=8
     export function setBrightness(percent: number): void {
         brightness = Math.clamp(0, 255, Math.round(percent * 2.55))
@@ -150,6 +153,7 @@ namespace UNBdevBLiXel {
     //% blockId=UNBdevBLiXel_shift
     //% block="shift UNBdev.board BLiXels by $offset"
     //% offset.min=0 offset.max=5 offset.defl=1
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=60 blockGap=8
     export function shift(offset: number = 1): void {
         const amount = Math.clamp(0, PIXEL_COUNT, Math.round(offset))
@@ -164,6 +168,7 @@ namespace UNBdevBLiXel {
     //% blockId=UNBdevBLiXel_rotate
     //% block="rotate UNBdev.board BLiXels by $offset"
     //% offset.min=-5 offset.max=5 offset.defl=1
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=50 blockGap=8
     export function rotate(offset: number = 1): void {
         let amount = Math.round(offset) % PIXEL_COUNT
@@ -190,6 +195,7 @@ namespace UNBdevBLiXel {
     //% block="show UNBdev.board BLiXel bar graph of $value with max $maximum ||min $minimum"
     //% minimum.defl=0 maximum.defl=100
     //% expandableArgumentMode="toggle"
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=40 blockGap=8
     export function showBarGraph(value: number, maximum: number,
         minimum: number = 0): void {
@@ -211,6 +217,7 @@ namespace UNBdevBLiXel {
     //% redValue.min=0 redValue.max=255
     //% greenValue.min=0 greenValue.max=255
     //% blueValue.min=0 blueValue.max=255
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=30
     export function rgb(redValue: number, greenValue: number,
         blueValue: number): number {
@@ -222,6 +229,7 @@ namespace UNBdevBLiXel {
     //% blockId=UNBdevBLiXel_hsl
     //% block="hue $h saturation $s luminosity $l"
     //% h.min=0 h.max=360 s.min=0 s.max=99 l.min=0 l.max=99
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=20
     export function hsl(h: number, s: number, l: number): number {
         h = ((Math.round(h) % 360) + 360) % 360
@@ -247,6 +255,7 @@ namespace UNBdevBLiXel {
     /** Return a named BLiXel colour. */
     //% blockId=UNBdevBLiXel_colour
     //% block="$colour"
+    //% blockNamespace=UNBDev subcategory="BLiXel"
     //% weight=10
     export function colour(colour: UNBdevBLiXelColour): number {
         return colour
