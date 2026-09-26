@@ -8,8 +8,8 @@ The integrated UNBdev.board uses micro:bit V2. The combined extension disables
 the legacy `mbdal` (micro:bit V1) build variant so its complete peripheral API
 fits and compiles against the board actually supplied for this project.
 
-All student-facing blocks appear under **Advanced** in one collapsible
-**UNBdev.board** category. Expand it to choose **Microphone**, **BLiXel**,
+All student-facing blocks appear in one collapsible **UNBdev.board**
+category. Expand it to choose **Microphone**, **BLiXel**,
 **Wi-Fi**, or **Motors**; each row uses the matching feature icon. This follows
 the expandable b.Board interaction pattern while using UNBdev.board names
 throughout. Blocks declared
@@ -33,8 +33,7 @@ stable UNBdev.board firmware contract.
 
 ## BLiXel blocks
 
-Import the extension, then open **UNBdev.board** under **Advanced** and expand
-**BLiXel**. The public
+Import the extension, then open **UNBdev.board** and expand **BLiXel**. The public
 blocks set all five integrated RGB BLiXels, set individual pixels, clear the
 strip, adjust brightness, shift or rotate colours, show a five-step bar graph,
 and construct RGB or HSL colours. Operations update the physical display
