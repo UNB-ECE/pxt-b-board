@@ -2,7 +2,7 @@
  * Student-facing controls for the microphone built into UNBdev.board.
  */
 //% color=#9E4894 icon="\uf130" block="UNBdev.board microphone"
-//% weight=490 advanced=true
+//% weight=490
 namespace UNBdevBoardMic {
     const DEFAULT_THRESHOLD = 50
 
@@ -54,7 +54,8 @@ namespace UNBdevBoardMic {
     /** Enable or disable the microphone built into UNBdev.board. */
     //% blockId=unbdev_mic_enable
     //% block="UNBdev.board microphone $state"
-    //% weight=60 advanced=true
+    //% blockNamespace=UNBDev subcategory="Microphone"
+    //% weight=60
     export function setEnabled(state: State): void {
         setThreshold(currentThreshold)
         command(MicrophoneFunction.Enable, [state])
@@ -64,7 +65,8 @@ namespace UNBdevBoardMic {
     /** Recalculate the microphone's ambient-sound baseline. */
     //% blockId=unbdev_mic_baseline
     //% block="update UNBdev.board microphone baseline"
-    //% weight=50 advanced=true
+    //% blockNamespace=UNBDev subcategory="Microphone"
+    //% weight=50
     export function updateBaseline(): void {
         command(MicrophoneFunction.SetBaseline)
     }
@@ -72,6 +74,7 @@ namespace UNBdevBoardMic {
     /** Read the RMS sound level measured by the integrated microphone. */
     //% blockId=unbdev_mic_sound_level
     //% block="UNBdev.board sound level"
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=100
     export function soundLevel(): number {
         initialize()
@@ -82,7 +85,8 @@ namespace UNBdevBoardMic {
     //% blockId=unbdev_mic_set_threshold
     //% block="set UNBdev.board sound threshold to $threshold"
     //% threshold.defl=50 threshold.min=1 threshold.max=65535
-    //% weight=80 advanced=true
+    //% blockNamespace=UNBDev subcategory="Microphone"
+    //% weight=80
     export function setThreshold(threshold: number): void {
         threshold = Math.round(Math.constrain(threshold, 1, 65535))
         currentThreshold = threshold
@@ -93,7 +97,8 @@ namespace UNBdevBoardMic {
     /** Return true when the firmware's microphone threshold flag is set. */
     //% blockId=unbdev_mic_threshold_flag
     //% block="has UNBdev.board sound threshold been reached?"
-    //% weight=40 advanced=true
+    //% blockNamespace=UNBDev subcategory="Microphone"
+    //% weight=40
     export function thresholdReached(): boolean {
         return read(MicrophoneFunction.ThresholdFlag) == 1
     }
@@ -101,7 +106,8 @@ namespace UNBdevBoardMic {
     /** Clear the firmware's microphone threshold flag. */
     //% blockId=unbdev_mic_clear_threshold_flag
     //% block="clear UNBdev.board sound threshold flag"
-    //% weight=30 advanced=true
+    //% blockNamespace=UNBDev subcategory="Microphone"
+    //% weight=30
     export function clearThresholdFlag(): void {
         command(MicrophoneFunction.ClearThresholdFlag)
     }
@@ -110,6 +116,7 @@ namespace UNBdevBoardMic {
     //% blockId=unbdev_mic_on_loud_sound
     //% block="on UNBdev.board loud sound"
     //% blockAllowMultiple=0 afterOnStart=true
+    //% blockNamespace=UNBDev subcategory="Microphone"
     //% weight=90
     export function onLoudSound(handler: () => void): void {
         initialize()
