@@ -10,6 +10,7 @@
         "control.ts",
         "unbdev.ts",
         "blixel.ts",
+        "click.ts",
         "microphone.ts",
         "motor.ts",
         "wifi.ts"
