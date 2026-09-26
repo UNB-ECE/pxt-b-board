@@ -18,12 +18,13 @@
  * feature layout less predictable, so advanced transport helpers stay hidden
  * and student blocks stay in their named rows.
  *
- * All rows share one icon. Subcategory rows render a fixed icon in the pinned
- * framework (webapp/src/toolbox.tsx, `iconContent` for a `subns` row), so
- * per-row icons are not available without changing the framework.
+ * `subcategoryIcons` supplies the same recognizable microphone, spinner,
+ * Wi-Fi, and gears cues used by b.Board. It is consumed by the pinned UNB PXT
+ * framework's nested-category renderer.
  */
 //% color=#9E4894 icon="\uf2db" block="UNBdev.board"
-//% weight=98 subcategories='["Microphone", "BLiXel", "Wi-Fi", "Motors"]'
+//% weight=98 advanced=true subcategories='["Microphone", "BLiXel", "Wi-Fi", "Motors"]'
+//% subcategoryIcons='{"Microphone":"\uf130","BLiXel":"\uf110","Wi-Fi":"\uf1eb","Motors":"\uf085"}'
 namespace UNBDev {
     // Keep namespace metadata available without exposing an extra block.
     //% blockHidden=true

@@ -8,10 +8,11 @@ The integrated UNBdev.board uses micro:bit V2. The combined extension disables
 the legacy `mbdal` (micro:bit V1) build variant so its complete peripheral API
 fits and compiles against the board actually supplied for this project.
 
-All student-facing blocks appear under **Advanced** as separate UNBdev.board
-category: **UNBdev.board**. Expand it to choose **Microphone**, **BLiXel**,
-**Wi-Fi**, or **Motors**. This follows the expandable b.Board interaction
-pattern while using UNBdev.board names throughout. Blocks declared
+All student-facing blocks appear under **Advanced** in one collapsible
+**UNBdev.board** category. Expand it to choose **Microphone**, **BLiXel**,
+**Wi-Fi**, or **Motors**; each row uses the matching feature icon. This follows
+the expandable b.Board interaction pattern while using UNBdev.board names
+throughout. Blocks declared
 `advanced` inside an entry are collected into that entry's `more` row. Existing
 TypeScript namespace names remain available so saved JavaScript projects stay
 compatible.
