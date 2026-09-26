@@ -19,12 +19,15 @@
  * and student blocks stay in their named rows.
  *
  * `subcategoryIcons` supplies the same recognizable microphone, spinner,
- * Wi-Fi, and gears cues used by b.Board. It is consumed by the pinned UNB PXT
- * framework's nested-category renderer.
+ * Wi-Fi, gears, and sliders cues used by b.Board. It is consumed by the pinned
+ * UNB PXT framework's nested-category renderer.
+ *
+ * `Control` carries the student-facing Click socket blocks ported from
+ * Brilliant Labs' bBoard_Control; see UNB-ECE/unblabs-platform#87.
  */
 //% color=#9E4894 icon="\uf2db" block="UNBdev.board"
-//% weight=98 advanced=true subcategories='["Microphone", "BLiXel", "Wi-Fi", "Motors"]'
-//% subcategoryIcons='{"Microphone":"\uf130","BLiXel":"\uf110","Wi-Fi":"\uf1eb","Motors":"\uf085"}'
+//% weight=98 advanced=true subcategories='["Microphone", "BLiXel", "Wi-Fi", "Motors", "Control"]'
+//% subcategoryIcons='{"Microphone":"\uf130","BLiXel":"\uf110","Wi-Fi":"\uf1eb","Motors":"\uf085","Control":"\uf1de"}'
 namespace UNBDev {
     // Keep namespace metadata available without exposing an extra block.
     //% blockHidden=true
