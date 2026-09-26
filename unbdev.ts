@@ -24,9 +24,13 @@
  *
  * `Control` carries the student-facing Click socket blocks ported from
  * Brilliant Labs' bBoard_Control; see UNB-ECE/unblabs-platform#87.
+ *
+ * This is a top-level category, not an advanced one. It opens and shuts
+ * because it declares named feature rows; the pinned framework gives the
+ * chevron and the collapse to top-level categories that do.
  */
 //% color=#9E4894 icon="\uf2db" block="UNBdev.board"
-//% weight=98 advanced=true subcategories='["Microphone", "BLiXel", "Wi-Fi", "Motors", "Control"]'
+//% weight=98 subcategories='["Microphone", "BLiXel", "Wi-Fi", "Motors", "Control"]'
 //% subcategoryIcons='{"Microphone":"\uf130","BLiXel":"\uf110","Wi-Fi":"\uf1eb","Motors":"\uf085","Control":"\uf2db"}'
 namespace UNBDev {
     // Keep namespace metadata available without exposing an extra block.
